@@ -42,6 +42,7 @@ var _utilsPureRenderMixin = require('../utils/PureRenderMixin');
 
 var _utilsPureRenderMixin2 = _interopRequireDefault(_utilsPureRenderMixin);
 
+_momentRange2['default'].locale('en');
 var lang = (0, _momentRange2['default'])().localeData();
 
 var WEEKDAYS = _immutable2['default'].List(lang._weekdays).zip(_immutable2['default'].List(lang._weekdaysShort));
@@ -63,7 +64,8 @@ var CalendarMonth = _reactAddons2['default'].createClass({
     highlightedRange: _reactAddons2['default'].PropTypes.object,
     onMonthChange: _reactAddons2['default'].PropTypes.func,
     onYearChange: _reactAddons2['default'].PropTypes.func,
-    value: _utilsCustomPropTypes2['default'].momentOrMomentRange },
+    value: _utilsCustomPropTypes2['default'].momentOrMomentRange
+  },
 
   renderDay: function renderDay(date, i) {
     var _props = this.props;
@@ -267,7 +269,8 @@ var CalendarMonth = _reactAddons2['default'].createClass({
         )
       )
     );
-  } });
+  }
+});
 
 exports['default'] = CalendarMonth;
 module.exports = exports['default'];

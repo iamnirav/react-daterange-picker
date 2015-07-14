@@ -48,5 +48,6 @@ exports['default'] = {
       return null;
     }
     return new Error('\'' + propName + '\' must be a moment range');
-  } };
+  }
+};
 module.exports = exports['default'];

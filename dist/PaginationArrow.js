@@ -10,7 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-function _defineProperty(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var _reactAddons = require('react/addons');
 
@@ -29,11 +29,13 @@ var PaginationArrow = _reactAddons2['default'].createClass({
 
   propTypes: {
     disabled: _reactAddons2['default'].PropTypes.bool,
-    direction: _reactAddons2['default'].PropTypes.oneOf(['next', 'previous']) },
+    direction: _reactAddons2['default'].PropTypes.oneOf(['next', 'previous'])
+  },
 
   getDefaultProps: function getDefaultProps() {
     return {
-      disabled: false };
+      disabled: false
+    };
   },
 
   render: function render() {
@@ -48,19 +50,22 @@ var PaginationArrow = _reactAddons2['default'].createClass({
 
     var elementOpts = {
       modifiers: modifiers,
-      states: states };
+      states: states
+    };
 
     var iconOpts = {
       element: 'PaginationArrowIcon',
       modifiers: modifiers,
-      states: states };
+      states: states
+    };
 
     return _reactAddons2['default'].createElement(
       'div',
       _extends({ className: this.cx(elementOpts) }, props),
       _reactAddons2['default'].createElement('div', { className: this.cx(iconOpts) })
     );
-  } });
+  }
+});
 
 exports['default'] = PaginationArrow;
 module.exports = exports['default'];
